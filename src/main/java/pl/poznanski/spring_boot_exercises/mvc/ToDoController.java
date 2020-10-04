@@ -1,4 +1,4 @@
-package pl.poznanski.spring_boot_exercises;
+package pl.poznanski.spring_boot_exercises.mvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,14 +10,17 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
+//rest controller z wyswietleiem bledow oraz zwracajacy obiekt typu ResponseEntity
 @RestController
 @RequestMapping("/api")
 public class ToDoController {
     private CommonRepository<ToDo> repository;
+    //zainicjalizaowanie repozytorium
     @Autowired
     public ToDoController(CommonRepository<ToDo> repository) {
         this. repository = repository;
     }
+
     @GetMapping("/todo")
     public ResponseEntity<Iterable<ToDo>> getToDos(){
         return ResponseEntity.ok(repository.findAll());
@@ -60,6 +63,7 @@ public class ToDoController {
         repository.delete(toDo);
         return ResponseEntity.noContent().build();
     }
+    //spersonalizowana obsluga bledow
     @ExceptionHandler
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ToDoValidationError handleException(Exception exception) {

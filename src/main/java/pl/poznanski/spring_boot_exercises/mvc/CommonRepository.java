@@ -1,4 +1,4 @@
-package pl.poznanski.spring_boot_exercises;
+package pl.poznanski.spring_boot_exercises.mvc;
 
 import java.util.Collection;
 

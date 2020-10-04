@@ -1,4 +1,4 @@
-package pl.poznanski.spring_boot_exercises;
+package pl.poznanski.spring_boot_exercises.mvc;
 
 import lombok.Data;
 import javax.validation.constraints.NotBlank;
