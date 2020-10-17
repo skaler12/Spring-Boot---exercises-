@@ -1,4 +1,4 @@
-package pl.poznanski.spring_boot_exercises.mvc;
+package pl.poznanski.spring_boot_exercises.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

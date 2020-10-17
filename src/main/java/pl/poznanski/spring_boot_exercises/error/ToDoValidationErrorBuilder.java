@@ -1,4 +1,4 @@
-package pl.poznanski.spring_boot_exercises.mvc;
+package pl.poznanski.spring_boot_exercises.error;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
