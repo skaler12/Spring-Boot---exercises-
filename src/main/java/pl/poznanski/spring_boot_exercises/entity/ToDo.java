@@ -3,6 +3,7 @@ package pl.poznanski.spring_boot_exercises.entity;
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,7 @@ import java.util.UUID;
 @Data
 @Builder
 @Entity
+@NoArgsConstructor
 public class ToDo {
 
     @Id
@@ -23,9 +25,6 @@ public class ToDo {
 
     private String description;
 
-    public ToDo() {
-
-    }
     public ToDo(Integer id, String description){
         //potrzebne by odwolac sie do konstuktora bezparametrowego
         this.id=id;

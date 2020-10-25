@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 //rest controller z wyswietleiem bledow oraz zwracajacy obiekt typu ResponseEntity
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/app/api")
 public class ToDoController {
     private ToDoRepository repository;
     //zainicjalizaowanie repozytorium
@@ -42,11 +42,13 @@ public class ToDoController {
 
         return ResponseEntity.noContent().build();
     }
+
     @DeleteMapping("/todo/{id}")
     public ResponseEntity<ToDo> deleteToDo(@PathVariable Integer id){
         repository.delete(ToDo.builder().id(id).build());
         return ResponseEntity.noContent().build();
     }
+
     @DeleteMapping("/todo")
     public ResponseEntity<ToDo> deleteToDo(@RequestBody ToDo toDo){
         repository.delete(toDo);

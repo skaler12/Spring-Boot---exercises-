@@ -22,7 +22,7 @@ public class SwagerConfig {
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .paths(PathSelectors.ant("/api/**")) //jakie endpointy ma obslugiwac swager, wrzucic do dokumentacji
+                .paths(PathSelectors.ant("/app/**")) //jakie endpointy ma obslugiwac swager, wrzucic do dokumentacji
                 .build().apiInfo(createApiInfo());
     }
     private ApiInfo createApiInfo() {
